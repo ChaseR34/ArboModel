@@ -73,8 +73,7 @@ ROOT_URLCONF = 'ArboModelData.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,8 +94,35 @@ WSGI_APPLICATION = 'ArboModelData.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'authentication_db',
+        'USER': 'dis',
+        'PASSWORD': 'M0nk3y!',
+        'HOST': '192.168.0.9',
+        'PORT': '5432',},
+    'GBIFDB': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gbif_db',
+        'USER': 'dis',
+        'PASSWORD': 'M0nk3y!',
+        'HOST': '192.168.0.9',
+        'PORT': '5432',
+    },
+        'MosquitoDB': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mosquito_db',
+        'USER': 'dis',
+        'PASSWORD': 'M0nk3y!',
+        'HOST': '192.168.0.9',
+        'PORT': '5432',
+    },
+        'WeatherDB': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'weather_db',
+        'USER': 'dis',
+        'PASSWORD': 'M0nk3y!',
+        'HOST': '192.168.0.9',
+        'PORT': '5432',
     }
 }
 
