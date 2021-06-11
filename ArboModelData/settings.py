@@ -51,10 +51,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third party applications for authentication
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'djoser'
+    'djoser',
+
+    # django apps
+    'Users.apps.UsersConfig',
+    'Databases.GBIF_DB',
+    'Databases.MosDB',
+    'Databases.WeatherDB'
 ]
 
 MIDDLEWARE = [
