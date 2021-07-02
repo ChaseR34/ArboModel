@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+hostname = "192."
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -59,9 +59,11 @@ INSTALLED_APPS = [
 
     # django apps
     'Users.apps.UsersConfig',
-    'Databases.GBIF_DB',
+    'Databases.GBIFDB',
     'Databases.MosDB',
-    'Databases.WeatherDB'
+    'Databases.WeatherDB',
+    'Databases.Clients',
+    'Auth'
 ]
 
 MIDDLEWARE = [
@@ -100,13 +102,20 @@ WSGI_APPLICATION = 'ArboModelData.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'authentication_db',
+    #     'USER': 'dis',
+    #     'PASSWORD': 'M0nk3y!',
+    #     'HOST': '192.168.0.9',
+    #     'PORT': '5432'},
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'authentication_db',
+        'NAME': 'clients',
         'USER': 'dis',
         'PASSWORD': 'M0nk3y!',
         'HOST': '192.168.0.9',
-        'PORT': '5432',},
+        'PORT': '5432'},
     'GBIFDB': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gbif_db',

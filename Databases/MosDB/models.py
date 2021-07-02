@@ -14,9 +14,7 @@ class Location(models.Model):
     Subcounty = models.CharField(null=True, max_length=50)
     City = models.CharField(null=True, max_length=50)
     District = models.IntegerField(null=True)
-    class Meta:
-        managed = False
-        db_table='MosDB_location'
+
 
     def __str__(self):
         return f'{self.Country} and {self.State} and {self.County}'
@@ -28,9 +26,7 @@ class TrapID(models.Model):
     def __str__(self):
         return f'{self.trapID}'
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_trapid'
+
 
 
 class MetaData(models.Model):
@@ -46,18 +42,14 @@ class MetaData(models.Model):
     def __str__(self):
         return f'{self.entered_date} {self.trap}'
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_metadata'
+
 
 class MosSpecies(models.Model):
     mosSpec = models.CharField(max_length=100)
 
     def __str__(self):
         return f'{self.mosSpec}'
-    class Meta:
-        managed = False
-        db_table = 'MosDB_mosspecies'
+
 
 class MosCount(models.Model):
     mospec = models.ForeignKey(
@@ -71,15 +63,12 @@ class MosCount(models.Model):
     females = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'Males: {self.males} and Femals:{self.females}'
-    class Meta:
-        managed = False
-        db_table = 'MosDB_moscount'
+        return f'Males: {self.males} and Females:{self.females}'
+
 
 class Virus(models.Model):
     virus = models.CharField(max_length=10)
-    class Meta:
-        managed = False
+
 
 class Pool(models.Model):
     metaData = models.ForeignKey(
@@ -109,11 +98,9 @@ class Pool(models.Model):
     num_female_mos = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'{self.positive} {self.virus} {self.SampleID}'
+        return f'{self.positive} {self.SampleID}'
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_virus'
+
 
 class Sequenced(models.Model):
     sequenced = models.CharField(default='No', max_length=25)
@@ -122,17 +109,13 @@ class Sequenced(models.Model):
     # sequencing_kit = models.CharField(null = True,max_length = 25)
     # number_of_samples_sequenced = models.IntegerField(default = 0)
     # sequencing_location = models.CharField(null = True ,max_length = 25)
-    class Meta:
-        managed = False
-        db_table = 'MosDB_sequenced'
+
 
 class Genome(models.Model):
     genome_raw = models.CharField(max_length=12000, null=True)
     genome_ORF = models.CharField(max_length=12000, null=True)
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_genome'
+
 
 ########### Public Genome Model ###########
 
@@ -161,9 +144,7 @@ class PublicGenomes(models.Model):
         'Virus',
         on_delete=models.SET_NULL,
         null=True)
-    class Meta:
-        managed = False
-        db_table = 'MosDB_publicgenomes'
+
 
 # class SampleResult(models.Model):
 #    metaData = models.ForeignKey(
@@ -216,9 +197,6 @@ class California(models.Model):
     def __str__(self):
         return f'agency_num: {self.agency_collection_num} site_name: {self.site_name}'
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_california'
 
 class California_Positives(models.Model):
 
@@ -237,6 +215,3 @@ class California_Positives(models.Model):
     def __str__(self):
         return f'week: {self.wk} trap_style: {self.trap_style}'
 
-    class Meta:
-        managed = False
-        db_table = 'MosDB_positives'
