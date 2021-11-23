@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:postgresql://192.168.0.9:5432/authentication_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="gbif_db@192.168.0.9" uuid="9c09b30c-6647-4436-b244-24848bf0d8cb">
+    <data-source source="LOCAL" name="gbif_db@134.114.109.163" uuid="9c09b30c-6647-4436-b244-24848bf0d8cb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.0.9:5432/gbif_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://134.114.109.163:5432/gbif_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="mosquito_db@192.168.0.9" uuid="b6ee12d4-8aac-4742-a5c3-494b897d36b1">
@@ -22,11 +22,11 @@
       <jdbc-url>jdbc:postgresql://192.168.0.9:5432/mosquito_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="weather_db@192.168.0.9" uuid="cd8b0382-c433-462c-b263-da7bcb46f6ff">
+    <data-source source="LOCAL" name="weather_db@134.114.109.163" uuid="cd8b0382-c433-462c-b263-da7bcb46f6ff">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.0.9:5432/weather_db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://134.114.109.163:5432/weather_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="clients@192.168.0.9" uuid="c1f0f5a8-3ccd-4dfb-9894-6be7cfe04d9d">
